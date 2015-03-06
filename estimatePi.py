@@ -7,6 +7,8 @@ MAXVAL=1000.0
 totalTrials = 0.0
 totalHits = 0.0
 currError = 0.0
+
+# a trial represents a single simulation
 def trial():
     global totalTrials
     global totalHits
@@ -31,8 +33,10 @@ def printResults():
 def main(argv):
     print("Welcome to estimating Pi");
     print("We will first run 10 trials");
+
     totalTrials=0
     totalHits=0
+
     for i in range(10): # 10
         trial()
     print('10')
@@ -92,6 +96,8 @@ def main(argv):
         trial()
     print('10 000 000')
     printResults()
+
+    print('Note: Multiplication error may apply')
 
 if __name__ == "__main__":
     main(sys.argv[1:])
