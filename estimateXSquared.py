@@ -2,14 +2,27 @@ import sys, random, math
 from random import *
 from math import sqrt
 
+MAXVALX=100.0
+MAXVALY=MAXVALX
+
 totalTrials = 0.0
 totalHits = 0.0
 currError = 0.0
+ideal = 333333
 
 def trial():
     global totalTrials
     global totalHits
+    x=randint(0, MAXVALX)
+    y=randint(0, MAXVALY)
 
+    totalTrials+=1.0
+
+    if detFunction(x, y):
+        totalHits += 1.0
+
+def detFunction(x, y):
+    return y <= x**2
 
 def printResults():
     ratio = totalHits/totalTrials
