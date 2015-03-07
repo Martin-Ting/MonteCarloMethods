@@ -3,12 +3,14 @@ from random import *
 from math import sqrt
 
 MAXVALX=100.0
-MAXVALY=MAXVALX**2 
+MAXVALY=MAXVALX**3 # TODO Plug X into the function to find MAXVALY
 
 totalTrials = 0.0
 totalHits = 0.0
 currError = 0.0
-ideal = 333333/MAXVALX**2
+integralValue=25000000            # TODO plug the integral value here see \/
+ideal = integralValue/MAXVALX**3 # TODO plug the neumerator with the integral from 0 to MAXVALX
+                                 #      plug the denominator with the function(MAXVALX)
 
 def trial():
     global totalTrials
@@ -21,8 +23,8 @@ def trial():
     if detFunction(x, y):
         totalHits += 1.0
 
-def detFunction(x, y):
-    return y <= x**2
+def detFunction(x, y):   # TODO change this according to the function of the model(x,y)
+    return y <= x**3
 
 def printResults():
     ratio = totalHits/totalTrials
@@ -36,7 +38,8 @@ def printResults():
     print(' ======================================')
 
 def main(argv):
-    print("Welcome to estimating the Integral of X**2 functions");
+    print("Welcome to estimating Pi");
+    print("We will first run 10 trials");
     totalTrials=0
     totalHits=0
     for i in range(10): # 10
