@@ -3,12 +3,12 @@ from random import *
 from math import sqrt
 
 MAXVALX=100.0
-MAXVALY=MAXVALX
+MAXVALY=MAXVALX**2 
 
 totalTrials = 0.0
 totalHits = 0.0
 currError = 0.0
-ideal = 333333
+ideal = 333333/MAXVALX**2
 
 def trial():
     global totalTrials
